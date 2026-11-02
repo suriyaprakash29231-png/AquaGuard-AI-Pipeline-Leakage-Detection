@@ -1,0 +1,263 @@
+{
+    "features": [
+        "inlet_flow_lpm",
+        "outlet_flow_lpm",
+        "flow_difference_lpm",
+        "flow_loss_ratio",
+        "inlet_pressure_bar",
+        "mid_pressure_bar",
+        "outlet_pressure_bar",
+        "total_pressure_drop",
+        "inlet_to_mid_drop",
+        "mid_to_outlet_drop",
+        "hydraulic_resistance",
+        "water_temperature_c",
+        "vibration_noise_db",
+        "vib_acoustic_intensity",
+        "flow_diff_rolling_mean",
+        "flow_diff_rolling_std",
+        "pressure_drop_rolling_mean",
+        "pressure_drop_rolling_std"
+    ],
+    "n_features": 18,
+    "feature_importances": {
+        "inlet_flow_lpm": 0.0005869308626879849,
+        "outlet_flow_lpm": 0.000930715134023864,
+        "flow_difference_lpm": 0.19324955149997392,
+        "flow_loss_ratio": 0.0776017985897057,
+        "inlet_pressure_bar": 0.00044638166574161877,
+        "mid_pressure_bar": 0.00294484606834609,
+        "outlet_pressure_bar": 0.012258643651914978,
+        "total_pressure_drop": 0.03591257953505224,
+        "inlet_to_mid_drop": 0.04452422972940969,
+        "mid_to_outlet_drop": 0.0007765028835523581,
+        "hydraulic_resistance": 0.0035642130159158707,
+        "water_temperature_c": 0.0007227054602927374,
+        "vibration_noise_db": 0.18617830515050843,
+        "vib_acoustic_intensity": 0.2146369981214203,
+        "flow_diff_rolling_mean": 0.15488542989373766,
+        "flow_diff_rolling_std": 0.04321036947974048,
+        "pressure_drop_rolling_mean": 0.011992744221585932,
+        "pressure_drop_rolling_std": 0.01557705503639017
+    },
+    "metrics": {
+        "Random Forest": {
+            "Accuracy": 0.9978,
+            "Precision": 0.9927,
+            "Recall": 0.9971,
+            "F1_Score": 0.9948,
+            "ROC_AUC": 1.0,
+            "False_Alarm_Rate_FPR": 0.002,
+            "False_Discovery_Rate": 0.0073,
+            "Confusion_Matrix": {
+                "TN": 2517,
+                "FP": 5,
+                "FN": 2,
+                "TP": 676
+            }
+        },
+        "Decision Tree": {
+            "Accuracy": 0.9969,
+            "Precision": 0.9912,
+            "Recall": 0.9941,
+            "F1_Score": 0.9926,
+            "ROC_AUC": 0.9985,
+            "False_Alarm_Rate_FPR": 0.0024,
+            "False_Discovery_Rate": 0.0088,
+            "Confusion_Matrix": {
+                "TN": 2516,
+                "FP": 6,
+                "FN": 4,
+                "TP": 674
+            }
+        },
+        "Gradient Boosting": {
+            "Accuracy": 0.9975,
+            "Precision": 0.9926,
+            "Recall": 0.9956,
+            "F1_Score": 0.9941,
+            "ROC_AUC": 0.9996,
+            "False_Alarm_Rate_FPR": 0.002,
+            "False_Discovery_Rate": 0.0074,
+            "Confusion_Matrix": {
+                "TN": 2517,
+                "FP": 5,
+                "FN": 3,
+                "TP": 675
+            }
+        },
+        "Isolation Forest": {
+            "Accuracy": 0.9306,
+            "Precision": 0.8304,
+            "Recall": 0.8451,
+            "F1_Score": 0.8377,
+            "ROC_AUC": 0.9776,
+            "False_Alarm_Rate_FPR": 0.0464,
+            "False_Discovery_Rate": 0.1696,
+            "Confusion_Matrix": {
+                "TN": 2405,
+                "FP": 117,
+                "FN": 105,
+                "TP": 573
+            }
+        }
+    },
+    "threshold_analysis": [
+        {
+            "threshold": 0.1,
+            "false_alarm_rate_fpr": 0.0087,
+            "precision": 0.9686,
+            "recall": 1.0,
+            "f1": 0.984,
+            "false_alarms_count": 22,
+            "missed_leaks_count": 0
+        },
+        {
+            "threshold": 0.15,
+            "false_alarm_rate_fpr": 0.0059,
+            "precision": 0.9784,
+            "recall": 1.0,
+            "f1": 0.9891,
+            "false_alarms_count": 15,
+            "missed_leaks_count": 0
+        },
+        {
+            "threshold": 0.2,
+            "false_alarm_rate_fpr": 0.0048,
+            "precision": 0.9826,
+            "recall": 1.0,
+            "f1": 0.9912,
+            "false_alarms_count": 12,
+            "missed_leaks_count": 0
+        },
+        {
+            "threshold": 0.25,
+            "false_alarm_rate_fpr": 0.004,
+            "precision": 0.9854,
+            "recall": 0.9985,
+            "f1": 0.9919,
+            "false_alarms_count": 10,
+            "missed_leaks_count": 1
+        },
+        {
+            "threshold": 0.3,
+            "false_alarm_rate_fpr": 0.004,
+            "precision": 0.9854,
+            "recall": 0.9971,
+            "f1": 0.9912,
+            "false_alarms_count": 10,
+            "missed_leaks_count": 2
+        },
+        {
+            "threshold": 0.35,
+            "false_alarm_rate_fpr": 0.0036,
+            "precision": 0.9869,
+            "recall": 0.9971,
+            "f1": 0.9919,
+            "false_alarms_count": 9,
+            "missed_leaks_count": 2
+        },
+        {
+            "threshold": 0.4,
+            "false_alarm_rate_fpr": 0.0028,
+            "precision": 0.9898,
+            "recall": 0.9971,
+            "f1": 0.9934,
+            "false_alarms_count": 7,
+            "missed_leaks_count": 2
+        },
+        {
+            "threshold": 0.45,
+            "false_alarm_rate_fpr": 0.002,
+            "precision": 0.9927,
+            "recall": 0.9971,
+            "f1": 0.9948,
+            "false_alarms_count": 5,
+            "missed_leaks_count": 2
+        },
+        {
+            "threshold": 0.5,
+            "false_alarm_rate_fpr": 0.002,
+            "precision": 0.9927,
+            "recall": 0.9971,
+            "f1": 0.9948,
+            "false_alarms_count": 5,
+            "missed_leaks_count": 2
+        },
+        {
+            "threshold": 0.55,
+            "false_alarm_rate_fpr": 0.0016,
+            "precision": 0.9941,
+            "recall": 0.9956,
+            "f1": 0.9948,
+            "false_alarms_count": 4,
+            "missed_leaks_count": 3
+        },
+        {
+            "threshold": 0.6,
+            "false_alarm_rate_fpr": 0.0016,
+            "precision": 0.9941,
+            "recall": 0.9941,
+            "f1": 0.9941,
+            "false_alarms_count": 4,
+            "missed_leaks_count": 4
+        },
+        {
+            "threshold": 0.65,
+            "false_alarm_rate_fpr": 0.0016,
+            "precision": 0.9941,
+            "recall": 0.9912,
+            "f1": 0.9926,
+            "false_alarms_count": 4,
+            "missed_leaks_count": 6
+        },
+        {
+            "threshold": 0.7,
+            "false_alarm_rate_fpr": 0.0012,
+            "precision": 0.9956,
+            "recall": 0.9912,
+            "f1": 0.9933,
+            "false_alarms_count": 3,
+            "missed_leaks_count": 6
+        },
+        {
+            "threshold": 0.75,
+            "false_alarm_rate_fpr": 0.0012,
+            "precision": 0.9955,
+            "recall": 0.9897,
+            "f1": 0.9926,
+            "false_alarms_count": 3,
+            "missed_leaks_count": 7
+        },
+        {
+            "threshold": 0.8,
+            "false_alarm_rate_fpr": 0.0004,
+            "precision": 0.9985,
+            "recall": 0.9867,
+            "f1": 0.9926,
+            "false_alarms_count": 1,
+            "missed_leaks_count": 9
+        },
+        {
+            "threshold": 0.85,
+            "false_alarm_rate_fpr": 0.0004,
+            "precision": 0.9985,
+            "recall": 0.9838,
+            "f1": 0.9911,
+            "false_alarms_count": 1,
+            "missed_leaks_count": 11
+        },
+        {
+            "threshold": 0.9,
+            "false_alarm_rate_fpr": 0.0004,
+            "precision": 0.9985,
+            "recall": 0.9794,
+            "f1": 0.9888,
+            "false_alarms_count": 1,
+            "missed_leaks_count": 14
+        }
+    ],
+    "optimal_threshold": 0.5,
+    "test_samples_count": 3200,
+    "total_dataset_rows": 16000
+}
